@@ -8,7 +8,7 @@ function bizarreStringIncrementer(str) {
         // check for leading zero if so then move forward
         if (number.toString() !== str.substring(index + 1, str.length)) {
             index += str.substring(index + 1, str.length).indexOf(number);
-            // check if starting number is of form 999... then go one step back
+            // if number is of form 999... then take one step aback
             if (number.toString()[0] === '9' && number.toString()[0] != (number + 1).toString()[0]) {
                 index -= 1;
             }
@@ -18,10 +18,10 @@ function bizarreStringIncrementer(str) {
 }
 
 function getLastNumberIndex(str) {
-    for (var ind = str.length - 1; ind > -1; ind--) {
+    for (let ind = str.length - 1; ind > -1; ind--) {
         if (isNaN(str[ind])) {
             return ind;
         }
     }
-    return str.length - 1;
+    return -1;
 }
