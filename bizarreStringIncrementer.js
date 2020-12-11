@@ -1,7 +1,7 @@
 // Start your implementation here
 function bizarreStringIncrementer(str) {
     let number = 0,
-        index = getIndex(str);
+        index = getLastNumberIndex(str);
     number = Number(str.substring(index + 1, str.length));
     if (isNaN(number)) number = 0;
     if (number > 0) {
@@ -18,7 +18,7 @@ function bizarreStringIncrementer(str) {
     return str.substring(0, index + 1) + (number + 1);
 }
 
-function getIndex(str) {
+function getLastNumberIndex(str) {
     for (var ind = str.length - 1; ind > -1; ind--) {
         if (isNaN(str[ind])) {
             return ind;
