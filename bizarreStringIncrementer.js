@@ -7,10 +7,9 @@ function bizarreStringIncrementer(str) {
     if (number > 0) {
         // check for leading zero if so then move forward
         if (number.toString() !== str.substring(index + 1, str.length)) {
-
             index += str.substring(index + 1, str.length).indexOf(number);
-            // check if starting number is 9 then one step back
-            if (number.toString()[0] == '9') {
+            // check if starting number is of form 999... then go one step back
+            if (number.toString()[0] === '9' && number.toString()[0] != (number + 1).toString()[0]) {
                 index -= 1;
             }
         }
