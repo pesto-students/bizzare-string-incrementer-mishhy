@@ -1,5 +1,5 @@
 // Start your implementation here
-function bizarreStringIncrementer(str) {
+export function bizarreStringIncrementer(str) {
     let number = 0,
         index = getLastNumberIndex(str);
     number = Number(str.substring(index + 1, str.length));
